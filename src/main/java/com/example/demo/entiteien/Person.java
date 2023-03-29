@@ -4,8 +4,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
+@MappedSuperclass
 
-@Entity
 public abstract class Person {
 
 	@Id
@@ -18,7 +19,7 @@ public abstract class Person {
 	
 	protected String password;
 	
-	public abstract String getRole();
+	public abstract PersonRole getRole();
 
 	public long getId() {
 		return id;

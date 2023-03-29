@@ -4,13 +4,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 
 @Entity
-public class OrganizerE {
+public class OrganizerE extends Person {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
-	
-	private String Name;
+
+	@Override
+	public PersonRole getRole() {
+		// TODO Auto-generated method stub
+		return PersonRole.Organizer;
+	}
 }
