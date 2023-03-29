@@ -6,6 +6,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
  
 @Entity
 public class BookingRequest {
@@ -26,6 +27,9 @@ public class BookingRequest {
 	private boolean hasVj;
 	
 	private String synopsis;
+	
+	@ManyToOne(optional = false)
+	private Artist artist;
 
 	public long getId() {
 		return id;
