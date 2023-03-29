@@ -21,7 +21,7 @@ public class BookingRequest {
 	private BookingRequestStatus status;
 	
 	private int day;
-	
+	 
 	private int timeSlot;
 	
 	private boolean needVj;
