@@ -10,7 +10,7 @@ import com.example.demo.entiteien.BookingRequest;
 public class BookingRequestService {
 	
 	@Autowired
-	public BookingRequestRepository repo;
+	public IBookingRequestRepository repo;
 	
 	public void goeienaam() {
 		repo.save(new BookingRequest());
