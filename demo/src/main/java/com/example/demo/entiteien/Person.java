@@ -10,5 +10,17 @@ public class Person {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long ID;
+	protected long id;
+	
+	protected String name;
+	
+	protected String email;
+	
+	protected String password;
+	
+	public String GetRole() {
+		return "";
+	}
+	
+	
 }
