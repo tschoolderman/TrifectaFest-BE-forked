@@ -20,12 +20,17 @@ public class ArtistService {
 		repo.save(new Artist());
 	}
 	
-	public void save(Artist a) {
+	public boolean save(Artist a) {
 		repo.save(a);
+		return true;
 	}
 	
 	public List<Artist> findAll(){
 		return repo.findAll();
+	}
+	
+	public Artist findById(long id) {
+		return repo.findById(id).get();
 	}
 	
 	public boolean update(Artist a, long id) {
