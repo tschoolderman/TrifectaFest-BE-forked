@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
 @Entity
-public class OrganizerE extends Person {
+public class Organizer extends Person {
 
 
 	@Override

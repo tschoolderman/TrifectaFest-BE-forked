@@ -3,7 +3,7 @@ package com.example.demo.entiteien;
 import javax.persistence.Entity;
 
 @Entity
-public class CustomerE extends Person {
+public class Customer extends Person {
 
 	@Override
 	public PersonRole getRole() {
