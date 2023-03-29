@@ -1,9 +1,10 @@
-package com.example.demo.persistance;
+package com.example.demo.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.entiteien.BookingRequest;
+import com.example.demo.persistance.IBookingRequestRepository;
 
 
 @Service
