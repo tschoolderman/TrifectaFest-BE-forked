@@ -4,17 +4,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.service.BookingRequestService;
+import com.example.demo.service.StageService;
 
 @RestController
-public class BookingRequestEndpoint {
+public class StageEndpoint {
 
 	@Autowired
-	BookingRequestService abc;
+	StageService abc;
 	
-	@GetMapping("def")
-	public void ghi() {
-		System.out.println("we zijn in het endpoint");
-		abc.goeienaam();
+	@GetMapping("xyz")
+	public void yyy() {
+		System.out.println("ok");
 	}
 }
