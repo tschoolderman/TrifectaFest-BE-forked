@@ -3,16 +3,16 @@ package com.example.demo.persistance;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.entiteien.ApplicationE;
+import com.example.demo.entiteien.BookingRequest;
 
 
 @Service
-public class ApplicationEService {
+public class BookingRequestService {
 	
 	@Autowired
-	public ApplicationERepository repo;
+	public BookingRequestRepository repo;
 	
 	public void goeienaam() {
-		repo.save(new ApplicationE());
+		repo.save(new BookingRequest());
 	}
 }
