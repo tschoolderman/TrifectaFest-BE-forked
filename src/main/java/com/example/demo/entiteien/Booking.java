@@ -16,10 +16,10 @@ public class Booking {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	
-	@Column(precision = 2, scale = 8 )
+
+	@Column(scale = 2, precision = 8)
 	private BigDecimal compensation;
-	
+
 	@OneToOne(fetch = FetchType.LAZY, orphanRemoval = true, mappedBy = "booking")
 	private BookingRequest bookingRequest;
 
