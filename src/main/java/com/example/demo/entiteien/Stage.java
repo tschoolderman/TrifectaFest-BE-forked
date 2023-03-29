@@ -4,20 +4,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
+ 
 @Entity
-public class ApplicationE {
+public class Stage {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
-//	private int artistId;
-	
-//	private int stageId;
-	
-	private String Synopsis;
-	
-	private boolean needVj;
-	
+	private String name;
+	private int capacity;
 }
