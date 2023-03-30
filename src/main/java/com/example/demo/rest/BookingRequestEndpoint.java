@@ -25,6 +25,13 @@ public class BookingRequestEndpoint {
 		return repo.findAll();
 	}
 	
+	@GetMapping("saveemptybookingrequest")
+	public void SaveEmpty() {
+		System.out.println("we zijn in het endpoint");
+		repo.save(new BookingRequest());
+	}
+	
+	
 	@RequestMapping(method=RequestMethod.POST, value="/api/bookingrequest")
 	public boolean create(@RequestBody BookingRequest f) {
 		repo.save(f);
@@ -42,9 +49,8 @@ public class BookingRequestEndpoint {
 		bookingRequest.setNeedVj(f.isNeedVj());
 		bookingRequest.setStatus(f.getStatus());
 		bookingRequest.setSynopsis(f.getSynopsis());
-		bookingRequest.getArtist().getId();
-		bookingRequest.getStage().getId();
-		
+//		bookingRequest.getArtist().getId();
+//		bookingRequest.getStage().getId(); 
 		
 		repo.save(bookingRequest);
 		return true;
