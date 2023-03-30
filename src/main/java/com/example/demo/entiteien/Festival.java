@@ -32,8 +32,9 @@ public class Festival {
 	@OneToMany(fetch = FetchType.LAZY, orphanRemoval = true, mappedBy = "festival")
 	private List<Stage> stages;
 
-	@ManyToOne(optional = false)
+	@ManyToOne(optional = true) //Hoort false te zijn
 	private Organizer organizer;
+	
 
 	public long getId() {
 		return id;
