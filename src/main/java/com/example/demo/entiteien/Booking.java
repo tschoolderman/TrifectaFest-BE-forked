@@ -20,7 +20,7 @@ public class Booking {
 	@Column(scale = 2, precision = 8)
 	private BigDecimal compensation;
 
-	@OneToOne(fetch = FetchType.LAZY, orphanRemoval = true, mappedBy = "booking")
+	@OneToOne(fetch = FetchType.LAZY, orphanRemoval = true)
 	private BookingRequest bookingRequest;
 
 	public long getId() {
