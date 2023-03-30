@@ -38,6 +38,12 @@ public class ArtistService {
 		
 		artist.setName(a.getName());
 		artist.setDescription(a.getDescription());
+		artist.setEmail(a.getEmail());
+		artist.setGenre(a.getGenre());
+		artist.setPassword(a.getPassword());
+		artist.setRekeningNummer(a.getRekeningNummer());
+		artist.setType(a.getType());
+		artist.setBookingRequests(a.getBookingRequests());
 		
 		repo.save(artist);
 		return true;
