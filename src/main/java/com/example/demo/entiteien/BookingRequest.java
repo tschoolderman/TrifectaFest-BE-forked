@@ -102,7 +102,7 @@ public class BookingRequest {
 	public void setArtist(Artist artist) {
 		this.artist = artist;
 	}
-	
+
 	public Stage getStage() {
 		return stage;
 	}
