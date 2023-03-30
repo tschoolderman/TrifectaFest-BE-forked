@@ -42,6 +42,8 @@ public class BookingRequestEndpoint {
 		bookingRequest.setNeedVj(f.isNeedVj());
 		bookingRequest.setStatus(f.getStatus());
 		bookingRequest.setSynopsis(f.getSynopsis());
+		bookingRequest.getArtist().getId();
+		
 		
 		repo.save(bookingRequest);
 		return true;

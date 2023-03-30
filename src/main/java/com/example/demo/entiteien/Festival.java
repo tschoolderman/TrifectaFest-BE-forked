@@ -14,25 +14,25 @@ import javax.persistence.OneToMany;
 
 @Entity
 public class Festival {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	
-	@Column(length=100)
+
+	@Column(length = 100)
 	private String name;
-	
+
 	private LocalDateTime beginDate;
-	
+
 	private LocalDateTime endDate;
-	
+
 	@OneToMany(fetch = FetchType.LAZY, orphanRemoval = true, mappedBy = "festival")
 	private List<Ticket> tickets;
-	
+
 	@OneToMany(fetch = FetchType.LAZY, orphanRemoval = true, mappedBy = "festival")
 	private List<Stage> stages;
-	
-	@ManyToOne(optional=false)
+
+	@ManyToOne(optional = false)
 	private Organizer organizer;
 
 	public long getId() {
@@ -90,7 +90,5 @@ public class Festival {
 	public void setOrganizer(Organizer organizer) {
 		this.organizer = organizer;
 	}
-	
-	
 
 }

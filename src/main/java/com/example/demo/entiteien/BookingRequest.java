@@ -36,7 +36,7 @@ public class BookingRequest {
 	@ManyToOne(optional = false)
 	private Stage stage;
 	
-	@OneToOne(fetch = FetchType.LAZY, orphanRemoval = true)
+	@OneToOne(fetch = FetchType.LAZY, orphanRemoval = true, mappedBy = "bookingRequest")
 	private Booking booking;
 
 	public long getId() {
@@ -93,6 +93,14 @@ public class BookingRequest {
 
 	public void setSynopsis(String synopsis) {
 		this.synopsis = synopsis;
+	}
+
+	public Artist getArtist() {
+		return artist;
+	}
+
+	public void setArtist(Artist artist) {
+		this.artist = artist;
 	}
 	
 	
