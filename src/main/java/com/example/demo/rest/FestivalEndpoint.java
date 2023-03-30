@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -12,12 +13,16 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.entiteien.Festival;
 import com.example.demo.persistance.IFestivalRepository;
+import com.example.demo.service.FestivalService;
 
 @RestController
 public class FestivalEndpoint {
 	
 	@Autowired
 	IFestivalRepository repo;
+	
+	@Autowired
+	FestivalService service;
 
 	@GetMapping("api/festival/newempty")
 	public void SaveEmpty() {
@@ -57,5 +62,14 @@ public class FestivalEndpoint {
 		repo.delete(repo.findById(id).get());
 		return true;
 	}
+	
+	@GetMapping("api/festival/organizer/{festivalid}/{organizerid}")
+	public String addOrganizer(@PathVariable("festivalid") long festivalid, @PathVariable("organizerid") long organizerid) {
+		System.out.println(festivalid);
+		System.out.println(organizerid);
+		service.voegtoe(festivalid, organizerid);
+		return "";
+	}
+		
 
 }

@@ -5,21 +5,27 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.entiteien.Artist;
+import com.example.demo.entiteien.Festival;
 import com.example.demo.entiteien.Organizer;
 import com.example.demo.persistance.IOrganizerRepository;
 import com.example.demo.service.ArtistService;
+import com.example.demo.service.OrganizerService;
 
 @RestController
 public class OrganizerEndpoint {
 
 	@Autowired
 	IOrganizerRepository repo;
+	
+	@Autowired
+	OrganizerService service;
 
 	@GetMapping("api/organizer/newempty")
 	public void SaveEmpty() {
@@ -44,6 +50,7 @@ public class OrganizerEndpoint {
 		
 	}
 	
+	
 	@RequestMapping(method=RequestMethod.PUT, value="api/organizer/update/{id}")
 	public boolean update(@RequestBody Organizer o, @PathVariable long id) {
 		Organizer organizer = repo.findById(id).get();
@@ -57,6 +64,14 @@ public class OrganizerEndpoint {
 	@RequestMapping(method=RequestMethod.DELETE, value="api/organizer/delete/{id}")
 	public boolean delete( @PathVariable long id) {
 		repo.delete(repo.findById(id).get());
+		return true;
+	}
+	
+	@PostMapping("api/organizer/newfestival/{id}")
+	public boolean newFestival(@PathVariable("id") long id, @RequestBody Festival festival) {
+		System.out.println(id);
+		System.out.println(festival);
+		service.createFestival(id, festival);
 		return true;
 	}
 }
