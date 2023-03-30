@@ -24,7 +24,7 @@ public class Artist extends Person {
 	@Column(length = 20)
 	private String rekeningNummer;
 
-	@OneToMany(fetch = FetchType.LAZY, orphanRemoval = true, mappedBy = "artist")
+	@OneToMany(fetch = FetchType.LAZY, orphanRemoval = false, mappedBy = "artist")
 	private List<BookingRequest> bookingRequests;
 
 	@Override
@@ -64,5 +64,15 @@ public class Artist extends Person {
 	public void setRekeningNummer(String rekeningNummer) {
 		this.rekeningNummer = rekeningNummer;
 	}
+
+	public List<BookingRequest> getBookingRequests() {
+		return bookingRequests;
+	}
+
+	public void setBookingRequests(List<BookingRequest> bookingRequests) {
+		this.bookingRequests = bookingRequests;
+	}
+	
+	
 
 }

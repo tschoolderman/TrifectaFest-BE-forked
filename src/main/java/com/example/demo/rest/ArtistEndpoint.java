@@ -18,24 +18,35 @@ public class ArtistEndpoint {
 	@Autowired
 	ArtistService service;
 
-	@GetMapping("saveemptyartist")
+	@GetMapping("api/artist/newempty")
 	public void SaveEmpty() {
 		System.out.println("we zijn in het endpoint");
 		service.save();
 	}
 	
-	@RequestMapping(method=RequestMethod.POST, value="artist/new")
-	public boolean SaveNew(@RequestBody Artist a) {
+	@RequestMapping(method=RequestMethod.POST, value="api/artist/new")
+	public boolean saveNew(@RequestBody Artist a) {
 		return service.save(a);
 	}
 	
-	@GetMapping("artists")
+	@GetMapping("api/artist/all")
 	public List<Artist> getAll() {
 		return service.findAll();
 	}
 	
-	@GetMapping("artist/{id}")
+	@GetMapping("api/artist/get/{id}")
 	public Artist getById(@PathVariable long id) {
 		return service.findById(id);
 	}
+	
+	@RequestMapping(method=RequestMethod.PUT, value="api/artist/update/{id}")
+	public boolean update(@RequestBody Artist a, @PathVariable long id) {
+		return service.update(a, id);
+	}
+	
+	@RequestMapping(method=RequestMethod.DELETE, value="api/artist/delete/{id}")
+	public boolean delete( @PathVariable long id) {
+		return service.delete(id);
+	}
 }
+
