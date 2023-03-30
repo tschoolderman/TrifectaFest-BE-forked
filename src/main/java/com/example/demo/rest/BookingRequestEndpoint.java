@@ -43,6 +43,7 @@ public class BookingRequestEndpoint {
 		bookingRequest.setStatus(f.getStatus());
 		bookingRequest.setSynopsis(f.getSynopsis());
 		bookingRequest.getArtist().getId();
+		bookingRequest.getStage().getId();
 		
 		
 		repo.save(bookingRequest);
