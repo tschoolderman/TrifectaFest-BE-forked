@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
+
 @MappedSuperclass
 
 public abstract class Person {
@@ -12,13 +13,13 @@ public abstract class Person {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	protected long id;
-	
+
 	protected String name;
-	
+
 	protected String email;
-	
+
 	protected String password;
-	
+
 	public abstract PersonRole getRole();
 
 	public long getId() {
@@ -52,6 +53,5 @@ public abstract class Person {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
-	
+
 }
