@@ -30,10 +30,10 @@ public class BookingRequest {
 	
 	private String synopsis;
 	
-	@ManyToOne(optional = false)
+	@ManyToOne(optional = true)//moet false
 	private Artist artist;
 	
-	@ManyToOne(optional = false)
+	@ManyToOne(optional = true) //moet false
 	private Stage stage;
 	
 	@OneToOne(fetch = FetchType.LAZY, orphanRemoval = true, mappedBy = "bookingRequest")
@@ -101,6 +101,14 @@ public class BookingRequest {
 
 	public void setArtist(Artist artist) {
 		this.artist = artist;
+	}
+	
+	public Stage getStage() {
+		return stage;
+	}
+
+	public void setStage(Stage stage) {
+		this.stage = stage;
 	}
 	
 	
