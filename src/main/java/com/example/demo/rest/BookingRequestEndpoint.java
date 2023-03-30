@@ -20,7 +20,7 @@ public class BookingRequestEndpoint {
 	@Autowired
 	private IBookingRequestRepository repo;
 	
-	@RequestMapping("/api/bookingRequest/all")
+	@RequestMapping("/api/bookingrequest/all")
 	public List<BookingRequest> findAll(){
 		return repo.findAll();
 	}
@@ -30,6 +30,8 @@ public class BookingRequestEndpoint {
 		repo.save(f);
 		return true;
 	}
+	
+	
 	
 	@RequestMapping(method=RequestMethod.PUT, value="/api/bookingrequest/{id}")
 	public boolean update(@RequestBody BookingRequest f, @PathVariable long id) {
@@ -45,7 +47,8 @@ public class BookingRequestEndpoint {
 		return true;
 	}
 	
-	
+	//	
+//	@RequestMapping(method = RequestMethod.)	
 	
 //	@GetMapping("def")
 //	public void ghi() {

@@ -13,6 +13,9 @@ public class BookingRequestService {
 	@Autowired
 	public IBookingRequestRepository repo;
 	
+	
+	
+	
 	public void goeienaam() {
 		repo.save(new BookingRequest());
 	}
