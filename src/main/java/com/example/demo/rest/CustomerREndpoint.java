@@ -21,6 +21,7 @@ public class CustomerREndpoint {
 
 	@GetMapping("richard2/{rrr}")
 	public String Proberen2(@PathVariable("rrr")String abc) {
+		
 		service.opslaanMaar(abc);
 		
 		return "Doet deze het nou dan ook?" + abc;

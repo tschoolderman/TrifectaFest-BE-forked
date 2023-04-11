@@ -18,4 +18,7 @@ public class CustomerRService {
 		c.setName(text);
 		repo.save(c);
 	}
+	public void findByName(String text) {
+		
+	}
 }
