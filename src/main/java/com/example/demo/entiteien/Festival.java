@@ -12,6 +12,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Festival {
 
@@ -84,10 +86,13 @@ public class Festival {
 		this.stages = stages;
 	}
 
+	@JsonIgnore
 	public Organizer getOrganizer() {
 		return organizer;
+	
 	}
 
+	@JsonIgnore
 	public void setOrganizer(Organizer organizer) {
 		this.organizer = organizer;
 	}
