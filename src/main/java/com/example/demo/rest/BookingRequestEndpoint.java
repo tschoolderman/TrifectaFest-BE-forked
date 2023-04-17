@@ -53,6 +53,10 @@ public class BookingRequestEndpoint {
 		return service.delete(id);
 	}
 	
+	@GetMapping("api/artist/bookingrequest/{id}")
+	public List<BookingRequest> showBookingRequestByArtist(@PathVariable long id){
+		return service.filterBookingRequest(id);
+	}
 	
 	
 }
