@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import com.example.demo.entiteien.Artist;
 import com.example.demo.entiteien.BookingRequest;
 import com.example.demo.persistance.IArtistRepository;
 import com.example.demo.persistance.IBookingRequestRepository;
@@ -76,5 +77,10 @@ public class BookingRequestService {
 	public boolean delete(long id) {
 		repo.deleteById(id);
 		return true;
+	}
+	public List<BookingRequest> filterBookingRequest(long id) {
+		 Artist artist = artistRepo.findById(id).get();
+				 List<BookingRequest> brs = repo.findByArtist(artist);
+				 return brs;
 	}
 }
