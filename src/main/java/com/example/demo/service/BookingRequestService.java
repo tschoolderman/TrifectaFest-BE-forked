@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import com.example.demo.entiteien.BookingRequest;
+import com.example.demo.persistance.IArtistRepository;
 import com.example.demo.persistance.IBookingRequestRepository;
+import com.example.demo.persistance.IStageRepository;
 
 
 @Service
@@ -17,6 +19,11 @@ public class BookingRequestService {
 	@Autowired
 	public IBookingRequestRepository repo;
 	
+	@Autowired
+	public IArtistRepository artistRepo;
+	
+	@Autowired
+	public IStageRepository stageRepo;
 	
 	public boolean update(BookingRequest a, long id) {
 		BookingRequest bookingRequest = repo.findById(id).get();
@@ -41,6 +48,20 @@ public class BookingRequestService {
 		repo.save(a);
 		return true;
 	}
+	
+	public boolean save(BookingRequest a, long aid, long sid) {
+		//get artist
+		//get stage
+		//a.set artist artist
+		
+		a.setArtist(artistRepo.findById(aid).get());
+		a.setStage(stageRepo.findById(sid).get());
+		
+		
+		repo.save(a);
+		return true;
+	}
+
 
 
 	public BookingRequest findById(long id) {
