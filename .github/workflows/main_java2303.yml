@@ -3,6 +3,11 @@
 
 name: Build and deploy JAR app to Azure Web App - java2303
 
+env:
+    spring.datasource.url: ${{ secrets.DB_HOST }}
+    spring.datasource.username: ${{ secrets.DB_USERNAME }}
+    spring.datasource.password: ${{ secrets.DB_PASSWORD }}
+
 on:
   push:
     branches:
